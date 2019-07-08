@@ -1,0 +1,43 @@
+package com.carOwner.enums;
+
+/**
+ * @Author lishuhan
+ * @Description:统一返回格式枚举
+ * @Date Create in 17:192018-5-9
+ * @Modified By:
+ */
+public enum ActionRspEnum {
+    UNKONW_ERROR(-1,"UNKONW_ERROR"),
+    SUCCESS(0,"SUCCESS"),
+    FORMAT_ERROR(1,"参数格式错误"),
+    HTTP_ERROR(2,"上传进出场信息失败"),
+    PAY_ERROR(3,"PAY_ERROR"),
+    In_ERROR(4,"入场失败,此车牌已入场"),
+    Out_ERROR(5,"出场失败,此车牌已出场"),
+    Login_ERROR(6,"登录失败,请检查用户名或密码是否正确"),
+    Code_ERROR(7,"验证码不正确"),
+    Reset_ERROR1(8,"重置密码错误,原始密码不正确"),
+    Reset_ERROR2(9,"重置密码错误,二次密码错误"),
+    Execl_ERROR(10,"导入execl出错"),
+    Execl_ERROR1(11,"导入execl格式出错"),
+    SESSION_OUT(12,"Session超时,请重新登录"),
+    Permission_ERROR(13,"该物业公司权限不足，请联系管理员"),
+    REPETITION_ERROR(14,"车牌已存在"),
+    LICENSE_ERROR(15,"key is unlawful")
+    ;
+    private Integer code;
+    private String message;
+
+    ActionRspEnum(Integer code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+}

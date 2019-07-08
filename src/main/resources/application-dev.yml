@@ -1,0 +1,43 @@
+server:
+  port: 8085
+  context-path: /
+spring:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://rm-wz9d21p5za0w2ja2xo.mysql.rds.aliyuncs.com:3306/wechat?autoReconnect=true&initialTimeout=3&useUnicode=true&characterEncoding=utf-8
+#      username: eparking
+#      password: 20peraikgn14@
+        #      本机
+      url: jdbc:mysql://localhost:3306/carowners?autoReconnect=true&initialTimeout=3&useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: 123456
+
+    freemarker:
+      request-context-attribute: req  #req访问request
+      suffix: .html  #后缀名
+      content-type: text/html
+      enabled: true
+      cache: false #缓存配置
+      mode: LEGACYHTML5
+      static-path-pattern: /static/**
+      charset: UTF-8 #编码格式
+      template-loader-path: classpath:/templates/
+mybatis:
+   configuration:
+         map-underscore-to-camel-case: true
+
+#wechart:
+#   AppId: wx9e63eedce3e6a355
+#   AppSecret: 7556e67ad3202fd38c3a96059f395c92
+#   mchId: 1488687112
+#   mchKey: fNcVZn2REzRA1oCwO3aOGdxvQhK61rcB
+thread:
+  corePoolSize: 10
+  maxPoolSize: 200
+  queueCapacity: 10
+logging:
+  level:
+    com:
+      carOwner:
+        dao: debug
+
